@@ -3,7 +3,7 @@ import {DataTypes} from "sequelize"
 
 
 const Users = sequelize.define("users", {
-	id : {
+	id_users : {
 		primaryKey: true,
 		type: DataTypes.STRING,
 		allowNull: false,
@@ -15,6 +15,10 @@ const Users = sequelize.define("users", {
 	password: {
 		type: DataTypes.STRING,
 		allowNull: false,
+	},
+	no_HP: {
+		type: DataTypes.INTEGER,
+		allowNull: true,
 	},
 	session_id : {
 		type: DataTypes.STRING,
