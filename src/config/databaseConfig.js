@@ -10,6 +10,7 @@ try{
 		console.log("Database connect")
 	})
 }catch(err){
+	console.log(err)
 	console.log("Database failed connect")
 }
 
