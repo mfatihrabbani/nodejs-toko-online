@@ -15,7 +15,7 @@ export const createUsers = async (users) => {
 		const hashPassword = await bcrypt.hash(password, 10)
 		const id = uniqid()
 		var result = Users.create({id_users: id, email, password: hashPassword})
-		result = JSON.parse(JSON.stringify(result))
+		result = {email, password: hashPassword}
 		return result
 	}catch(error){
 		console.log(error)
