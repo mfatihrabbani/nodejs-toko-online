@@ -1,0 +1,5 @@
+curl http://localhost:3000/api/products \
+--include \
+--header "Content-Type: application/json" \
+--request "POST" \
+--data '{"productName": "Beng Beng", "productDesc": "Beng Beng sangat enak sekali", "productPrice": 20000, "productStock": 10, "productCategory": "Makanan"}'
