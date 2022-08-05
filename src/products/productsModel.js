@@ -1,5 +1,6 @@
 import sequelize from "../config/databaseConfig.js"
 import {DataTypes} from "sequelize"
+import Categorys from "../categorys/categorysModel.js"
 
 const Products = sequelize.define("products", {
 	id_product : {
@@ -29,9 +30,15 @@ const Products = sequelize.define("products", {
 	},
 	product_category: {
 		type: DataTypes.STRING,
-		allowNull: false
+		allowNull: false,
+		// // references:{
+		// // 	model: Categorys,
+		// // 	key: "id_category"
+		// }
 	}
 })
+
+Products.belongsTo(Categorys, {foreignKey: "products_category"})
 
 Products.sync({alter: true})
 
