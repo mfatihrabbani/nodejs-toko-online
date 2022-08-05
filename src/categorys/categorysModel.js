@@ -13,6 +13,6 @@ const Categorys = sequelize.define("categorys", {
 	}
 })
 
-Categorys.sync({alter: true})
+Categorys.sync({alter: false})
 
 export default Categorys
