@@ -2,4 +2,9 @@ curl http://localhost:3000/api/products \
 --include \
 --header "Content-Type: application/json" \
 --request "POST" \
---data '{"productName": "Beng Beng", "productDesc": "Beng Beng sangat enak sekali", "productPrice": 20000, "productStock": 10, "productCategory": "Makanan"}'
+--data '{"productName": "Beng", "productDesc": "sangat enak sekali", "productPrice": 10000, "productStock": 10, "productCategory": "Makanan"}'
+
+curl http://localhost:3000/api/products?category=Makanan \
+--include \
+--header "Accept : application/json" \
+--request "GET"
