@@ -31,15 +31,15 @@ const Products = sequelize.define("products", {
 	product_category: {
 		type: DataTypes.STRING,
 		allowNull: false,
-		// // references:{
-		// // 	model: Categorys,
-		// // 	key: "id_category"
-		// }
+	},product_status: {
+		type: DataTypes.BOOLEAN,
+		allowNull: false,
+		defaultValue: true
 	}
 })
 
-Products.belongsTo(Categorys, {foreignKey: "products_category"})
+Products.belongsTo(Categorys, {foreignKey: "product_category"})
 
-Products.sync({alter: true})
+Products.sync({alter: false})
 
 export default Products
