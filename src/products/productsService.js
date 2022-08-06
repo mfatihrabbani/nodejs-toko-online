@@ -30,13 +30,19 @@ export const createProduct = async (products) => {
 }
 
 export const getProductsList = async (data) => {
-	const {category} = data
+	let {category} = data
 	let categoryQuery = false
-	if(!category) categoryQuery = true
+	console.log(typeof(category))
+	if(typeof(category) == "undefined"){
+		console.log("Categori tidak ada")
+		categoryQuery = true
+		category = "A"
+	}
 	try{
 		const checkCategory = async (category) => {
 			if(category){
 				const result = await Categorys.findOne({where: {category_name: category}})
+				if (result != null) return JSON.parse(JSON.stringify(result.id_category))
 				return JSON.parse(JSON.stringify(result))
 			}
 		}
@@ -44,9 +50,14 @@ export const getProductsList = async (data) => {
 		console.log(categoryId)
 		console.log(categoryQuery)
 		const result = await Products.findAll({
-			include: [{model: Categorys, attributes: ["id_category", "category_name"]}],
-			attributes: ["id_product", "product_name", "product_price", "product_desc", "product_stock"],
-			where: {product_category: categoryId.id_category}
+			include: [{model: Categorys, required: false, attributes: ["id_category", "category_name"]}],
+			attributes: ["id_product", "product_name", "product_price", "product_desc", "product_stock", "product_category"],
+			where: {
+				[Op.or]: [
+					{product_category: categoryId || "A"},
+					{product_status: categoryQuery}
+					]
+				}
 		})
 		const productsList = JSON.parse(JSON.stringify(result))
 		console.log(productsList)
