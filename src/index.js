@@ -12,8 +12,8 @@ app.use("/api", router)
 
 app.use((err, req, res, next) => {
 	if(err){
-		errorMessage = err.message || "Something error"
-		errorStatus = err.status || 500
+		const errorMessage = err.message || "Something error"
+		const errorStatus = err.status || 500
 		res.status(errorStatus).json({status: "Failed", code: errorStatus, message: errorMessage})
 	}else{
 		next()
