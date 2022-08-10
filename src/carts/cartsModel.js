@@ -19,6 +19,6 @@ const Carts = sequelize.define("carts", {
 
 Carts.belongsTo(Products, {foreignKey: "id_product"})
 
-Carts.sync({alter: true})
+Carts.sync({alter: false})
 
 export default Carts
