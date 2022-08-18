@@ -22,6 +22,6 @@ Checkouts.belongsTo(Orders, {foreignKey: "id_orders"})
 Checkouts.belongsTo(Users, {foreignKey: "id_users"})
 
 
-Checkouts.sync({alter: true})
+Checkouts.sync({alter: false})
 
 export default Checkouts
