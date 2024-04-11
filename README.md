@@ -1,8 +1,7 @@
 # Rest Api Toko Online Nodejs
 Belajar membuat rest api toko online menggunakan beberapa teknologi sebagai berikut
 
-# Project Title
-
+# Mini Toko Online 
 A brief description of what this project does and who it's for
 
 
