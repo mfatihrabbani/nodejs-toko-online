@@ -9,6 +9,8 @@ A brief description of what this project does and who it's for
 
 **Server:** Node, Express JS
 
+**Frontend:"" EJS
+
 **Database:** Mysql
 
 **Container:** Docker
