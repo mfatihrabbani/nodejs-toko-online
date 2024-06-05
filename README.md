@@ -9,7 +9,7 @@ Membuat website sederhana
 
 **Server:** Node, Express JS
 
-**Frontend:"" EJS
+**Frontend:** EJS
 
 **Database:** Mysql
 
